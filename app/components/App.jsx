@@ -44,6 +44,7 @@ class App extends React.Component {
 		});
 	}
 	editNote = (id, task) => {
+		console.log(this.state.notes);
 		this.setState({
 			notes: this.state.notes.map(note => {
 				if(note.id===id){
@@ -58,7 +59,12 @@ class App extends React.Component {
 		const {notes} = this.state;
 		return(
 			<div>
-				<button onClick={this.addNote}>+</button>
+				<button 
+					className="add-note"
+					onClick={this.addNote}
+				>
+					+
+				</button>
 				<Notes 
 					notes={notes} 
 					onNoteClick={this.activateNoteEdit}
