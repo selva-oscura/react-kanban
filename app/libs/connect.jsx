@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default (state, actions) => {
+const connect = (state, actions) => {
 	if(typeof state==='function' ||
 		(typeof state==='object' && Object.keys(state).length)){
-		return target => connect(state, actions, target);
+		return target => connects(state, actions, target);
 	}
 	return target => props => (
 		<target {...Object.assign({}, props, actions)} />
@@ -13,7 +13,7 @@ export default (state, actions) => {
 // Connect to Alt through context. (Not optimised as coded here)
 // If Alt store changes, it will force render.
 // See "AltContainer" and "connect-alt" for optimised solutions
-function connect(state = () => {}, actions = {}, target){
+function connects(state = () => {}, actions = {}, target){
 	class Connect extends React.Component{
 		componentDidMount(){
 			const {flux} = this.context;
@@ -33,7 +33,7 @@ function connect(state = () => {}, actions = {}, target){
 			return React.createElement(target,
 			{
 				...Object.assign(
-					{}, this props, state(composedStores), actions
+					{}, this.props, state(composedStores), actions
 				)
 			});
 		}
@@ -55,3 +55,5 @@ function composeStores(stores){
 	});
 	return ret;
 }
+
+export default connect;
