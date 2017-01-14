@@ -14,30 +14,19 @@ class App extends React.Component {
 	deleteNote = (id, e) => {
 		// Avoid bubbling to edit
 		e.stopPropagation();
-		console.log('id of targeted note', id)
 		this.props.NoteActions.delete(id);
 	}
 	activateNoteEdit = (id) => {
-		this.setState({
-			notes: this.state.notes.map(note => {
-				if(note.id===id){
-					note.editing = true;
-				}
-				return note
-			})
-		});
+		this.props.NoteActions.update({id, editing: true});
 	}
 	editNote = (id, task) => {
-		console.log(this.state.notes);
-		this.setState({
-			notes: this.state.notes.map(note => {
-				if(note.id===id){
-					note.editing = false;
-					note.task = task;
-				}
-				return note;
-			})
-		});
+		// this.props.NoteActions.update(({
+		// 	id, 
+		// 	editing: false, 
+		// 	task: task
+		// }));
+		const {NoteActions} = this.props;
+		NoteActions.update({id, task, editing: false});
 	}
 	render(){
 		const {notes} = this.props;
