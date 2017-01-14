@@ -14,9 +14,8 @@ class App extends React.Component {
 	deleteNote = (id, e) => {
 		// Avoid bubbling to edit
 		e.stopPropagation();
-		this.setState({
-			notes: this.state.notes.filter(note => note.id !==id)
-		});
+		console.log('id of targeted note', id)
+		this.props.NoteActions.delete(id);
 	}
 	activateNoteEdit = (id) => {
 		this.setState({
