@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Editable = ({editing, value, onEdit, className,...props}) => {
+const Editable = ({editing, value, onEdit, className, ...props}) => {
 	if(editing){
 		return <Edit 
 			className={className} 
