@@ -6,12 +6,10 @@ import NoteActions from '../actions/NoteActions';
 
 class App extends React.Component {
 	addNote = () => {
-		this.setState({
-			notes: this.state.notes.concat([{
-				id: uuid.v4(),
-				task: 'New Task'
-			}])
-		});
+		this.props.NoteActions.create({
+			id: uuid.v4(),
+			task: 'New Task',
+		})
 	}
 	deleteNote = (id, e) => {
 		// Avoid bubbling to edit
