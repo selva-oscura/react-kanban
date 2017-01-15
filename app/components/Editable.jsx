@@ -3,19 +3,24 @@ import classnames from 'classnames';
 
 const Editable = ({editing, value, onEdit, className, ...props}) => {
 	if(editing){
-		return <Edit 
-			className={className} 
-			value={value} 
-			onEdit={onEdit} 
-			{...props} 
-		/>;
+		console.log('should be allowing to edit');
+		return (
+			<Edit 
+				className={className} 
+				value={value} 
+				onEdit={onEdit}
+				{...props} 
+			/>
+		);
 	}
-	return <span 
-		className={classnames('value', className)}
-		{...props}
-	>
-		{value}
-	</span>;
+	return (
+		<span 
+			className={classnames('value', className)}
+			{...props}
+		>
+			{value}
+		</span>
+	);
 }
 
 class Edit extends React.Component{
