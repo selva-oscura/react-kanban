@@ -27,7 +27,7 @@ const LaneHeader = ({
 			editing: true
 		});
 	};
-	const editName = name => {
+	const editLaneName = name => {
 		LaneActions.update({
 			id: lane.id,
 			name, 
@@ -49,7 +49,7 @@ const LaneHeader = ({
 				className="lane-name"
 				editing={lane.editing}
 				value={lane.name}
-				onEdit={editName}
+				onEdit={editLaneName}
 			/>
 		</div>
 	);
