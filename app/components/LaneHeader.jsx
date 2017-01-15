@@ -21,14 +21,36 @@ const LaneHeader = ({
 			noteId
 		})
 	};
+	const activateLaneEdit = () => {
+		LaneActions.update({
+			id: lane.id,
+			editing: true
+		});
+	};
+	const editName = name => {
+		LaneActions.update({
+			id: lane.id,
+			name, 
+			editing: false
+		});
+	};
 	return (
-		<div className="lane-header">
+		<div 
+			className="lane-header" 
+			onClick={activateLaneEdit}
+			{...props}
+		>
 			<div className="lane-add-note">
 				<button onClick={addNote}>
 					+
 				</button>
 			</div>
-			<div className="lane-name">{lane.name}</div>
+			<Editable
+				className="lane-name"
+				editing={lane.editing}
+				value={lane.name}
+				onEdit={editName}
+			/>
 		</div>
 	);
 };
