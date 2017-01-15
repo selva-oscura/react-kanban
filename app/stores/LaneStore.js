@@ -9,7 +9,7 @@ class LaneStore{
 		// if notes aren't provided for some reason, default to empty array
 		lane.notes = lane.notes || [];
 		this.setState({
-			lanes: this.lanes.concat(lane);
+			lanes: this.lanes.concat(lane),
 		});
 	}
 }
