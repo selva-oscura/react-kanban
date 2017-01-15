@@ -2,14 +2,15 @@
 
 Started with react-boilerplate - Boilerplate for "SurviveJS - React" 
 
-Going through [SurviveJS - React](http://survivejs.com/react/introduction/) for the book.
+Going through [SurviveJS - React](http://survivejs.com/react/introduction/) book.
 
 ## Getting Started
 
-1. `npm i` - Install dependencies. This might take a while.
-2. `npm start` - Run development build. If it doesn't start, make sure you aren't running anything else in the same port. In case you are on a Unix platform, you can try `PORT=3000 npm start`. It will pick up the port from the environment if it's set.
-3. Surf to the port shown at terminal.
-4. Start modifying the code. The browser should pick up the changes.
+1. `git clone https://github.com/selva-oscura/react-kanban` - Clone project
+2. `npm i` - Install dependencies. This might take a while.
+3. `npm start` - Run development build. If it doesn't start, make sure you aren't running anything else in the same port. For Unix platforms, you can try `PORT=3000 npm start`. It will pick up the port from the environment if it's set.
+4. Navigate browser to the port shown at terminal.
+5. Start modifying the code. The browser should pick up the changes.
 
 ## Advanced Commands
 
