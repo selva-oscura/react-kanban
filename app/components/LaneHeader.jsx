@@ -34,6 +34,10 @@ const LaneHeader = ({
 			editing: false
 		});
 	};
+	const deleteLane = e => {
+		e.stopPropagation();
+		LaneActions.delete(lane.id);
+	}
 	return (
 		<div 
 			className="lane-header" 
@@ -51,6 +55,11 @@ const LaneHeader = ({
 				value={lane.name}
 				onEdit={editLaneName}
 			/>
+			<div className="lane-delete">
+				<button onClick={deleteLane}>
+					x
+				</button>
+			</div>
 		</div>
 	);
 };
