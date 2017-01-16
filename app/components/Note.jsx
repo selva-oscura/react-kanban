@@ -16,7 +16,6 @@ const Note = ({
 	...props
 }) => {
 	const dragSource = editing ? a => a : connectDragSource;
-	console.log('dragSource is', dragSource);
 	return compose(dragSource, connectDropTarget)(
 		<div 
 			style={{opacity: isDragging || isOver ? 0:1}} 
