@@ -13,7 +13,11 @@ const Notes = ({
 			<li key={id}>
 				<Note 
 					className="note"
+					id={id}
 					onClick={onNoteClick.bind(null, id)}
+					onMove={({sourceId, targetId}) => {
+						console.log('moving from', sourceId, 'to', targetId);
+					}}
 				>
 					<Editable 
 						className="editable"
