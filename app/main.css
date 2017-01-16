@@ -62,6 +62,7 @@ body {
 	padding: 0.5em;
 	background-color: #fdfdfd;
 	box-shadow: 0 0 0.3em .03em rgba(0,0,0,.3);
+	word-wrap: break-word;
 }
 .note:hover {
 	box-shadow: 0 0 0.3em .03em rgba(0,0,0,.7);
@@ -71,11 +72,26 @@ body {
 .note .value {
 	/* force to use inline-block so that it gets minimum height */
 	display: inline-block;
+	max-width: 7.5em;
 }
 
 .note .editable {
 	float: left;
 }
+
+.note input{
+	max-width: 8em;
+}
+
+.note input[type='text']:focus{
+	border: none !important;
+	outline: #ffffff none 0px !important;
+	outline-color: #ffffff !important;
+	outline-style: none !important;
+	outline-width: 0px !important;
+	word-wrap: break-word;
+}
+
 .note .delete {
 	float: right;
 	padding: 0;
