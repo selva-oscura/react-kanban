@@ -21,7 +21,6 @@ const Note = ({
 
 const noteSource = {
 	beginDrag(props){
-		console.log('beginDrag noteSource', props.id);
 		return {id: props.id};
 	}
 };
@@ -34,7 +33,6 @@ const noteTarget = {
 		if(sourceId!==targetId){
 			targetProps.onMove({sourceId, targetId});
 		}
-		console.log('hover sourceId', sourceId, 'targetId', targetId);
 	}
 };
 
